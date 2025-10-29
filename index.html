@@ -2,8 +2,9 @@
 <html>
     <head>
         <title>CoolBlogs</title>
-         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="index.css">
 
+      
         
     </head>
     <body>
@@ -12,13 +13,27 @@
             We have blogs on all sorts of topics, but if thats not enough for you, you can create your own categories
             of blogs. Creativity is awesome, which is why we encourage you to venture out speak your truth!
         </p>
-        <div class = "container">
-            <div class = "flexbox" id = "header">Blog Categories</div>
-            <div class = "flexbox" id = "sidebar">Sidebar</div>
-            <div class = "flexbox" id = "content">Content</div>
-            <div class = "flexbox" id = "footer"></div>
-        </div>
+        
+        <table id = "one">
+            <tr>
+                <th>Topic</th>
+                <th> Blog</td>
+            </tr>
+            <tr>
+                <td>
+                     <input type = "text" placeholder = "Blog Name"> <br>
+                </td>
+                <td> 
+                    <input type = "text" placeholder = "Blog"> <br>
+                </td>
+            </tr>
+        </table>
+        <input type = "button" onclick = "AddRow()" value = "Add"> <br>
+        <input type = "button" onclick = "DeleteRow()" value = "Delete"> <br>
 
+
+        <script src="index.js"></script>
+        
     </body>
-
 </html>
+
