@@ -1,1 +1,70 @@
 
+ body{
+                display: flex;
+                flex-direction: column;
+                background-color:bisque;
+                justify-content: center;
+                
+            }
+            h1{
+                text-align: center;
+                
+            
+            }
+            p{
+                align-self: center;
+                text-align: center;
+                width: 900px;
+
+            }
+            table{
+                border: 2px solid black;
+
+            }
+            td{
+                border: 2px solid black;
+            }
+            tr{
+                border: 2px solid black;
+            }
+            th{
+                border: 2px solid black;
+            }
+            .container{
+                display: grid;
+                height: 800px;
+                width: 500px;
+                gap: 0px;
+                grid-template-columns : 20% 80%;
+                grid-template-rows: 100px 600px 100px;
+                grid-template-areas:
+                "hd hd"
+                "sb ct"
+                "ft ft";
+                align-self: center;
+                border: 2px solid black;
+            
+
+            }
+            .flexbox{
+                display:flex;
+                align-items:flex-start;
+                justify-content: center;
+                border:2px solid black;
+            }
+            #header{
+                grid-area: hd;
+
+            }
+            #sidebar{
+                grid-area: sb;
+
+            }
+            #content{
+                grid-area: ct;
+
+            }
+            #footer{
+                grid-area: ft;
+
+            }
