@@ -36,6 +36,20 @@ function AddRow(){
 
 console.log();
 
+
 function DeleteRow(){
+    // create array of row elements
+    numRows = document.getElementsByTagName('tr');
+    // make it so you cannot delete the first row
+    if(numRows.length ==2){
+        return 0;
+        
+
+    }
+        // delete the last row
+    else{
+        tabble.removeChild(numRows[(numRows.length)-1]);
+
+    }
 
 }
