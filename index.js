@@ -53,6 +53,7 @@ function DeleteRow(){
     }
 
 }
+let table_info = [];
 function SaveInfo(){
 
     let input_array1 = document.getElementsByClassName('BlogTitle');
@@ -74,6 +75,7 @@ function SaveInfo(){
 
 
     arr3 = [arr1,arr2];
+    table_info = arr3;
     console.log(arr3);
     return arr3;
   
