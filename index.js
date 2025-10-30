@@ -53,3 +53,30 @@ function DeleteRow(){
     }
 
 }
+function SaveInfo(){
+
+    let input_array1 = document.getElementsByClassName('BlogTitle');
+    let input_array2 = document.getElementsByClassName('BlogContent');
+    arr1 = [];
+    arr2 = [];
+    
+
+
+
+   //getting values of input elements
+    for(let i = 0; i< input_array1.length;i++){
+        arr1.push(input_array1[i].value);
+    }
+   
+    for(let i = 0; i < input_array2.length;i++){
+        arr2.push(input_array2[i].value);
+    }
+
+
+    arr3 = [arr1,arr2];
+    console.log(arr3);
+    return arr3;
+  
+
+    
+}
