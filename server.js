@@ -31,6 +31,38 @@ app.post('/index', (req, res) => {
   });
 
 
+app.get('/data', (req, res) => {
+    fs.readFile('data.json', (err, data) => {
+        if (err) {
+            // If file doesn't exist, return empty array
+            if (err.code === 'ENOENT') {
+                return res.json([]);
+            }
+            console.error('Error reading data.json:', err);
+            return res.status(500).json({ error: 'Internal Server Error' });
+        }
+        
+        try {
+            const jsonData = JSON.parse(data);
+            res.json(jsonData);
+        } catch (parseError) {
+            console.error('Error parsing JSON:', parseError);
+            res.status(500).json({ error: 'Invalid JSON data' });
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -41,4 +73,3 @@ app.post('/index', (req, res) => {
 app.listen(PORT, () => {
 console.log(`Server is running on http://localhost:${PORT}`);
 });
-
