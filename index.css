@@ -1,49 +1,18 @@
-
- body{
-                display: flex;
-                flex-direction: column;
+body{
                 background-color:bisque;
                 justify-content: center;
                 
             }
-            h1{
-                text-align: center;
-                
             
-            }
-            p{
-                align-self: center;
-                text-align: center;
-                width: 900px;
-
-            }
-            table{
-                border: 2px solid black;
-
-            }
-            td{
-                border: 2px solid black;
-            }
-            tr{
-                border: 2px solid black;
-            }
-            th{
-                border: 2px solid black;
-            }
+           
+            
             .container{
-                display: grid;
-                height: 800px;
-                width: 500px;
-                gap: 0px;
-                grid-template-columns : 20% 80%;
-                grid-template-rows: 100px 600px 100px;
-                grid-template-areas:
-                "hd hd"
-                "sb ct"
-                "ft ft";
-                align-self: center;
-                border: 2px solid black;
-            
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+        
+                flex-wrap:wrap;
+               
 
             }
             .flexbox{
@@ -52,19 +21,50 @@
                 justify-content: center;
                 border:2px solid black;
             }
+           #cont1{
+            align-content: center;
+           }
+           .row{
+              display: grid;
+                width: 1200px;
+                margin: auto;
+                grid-template-columns: 20% 80% ;
+                grid-gap:0px;
+                grid-template-areas:
+                "t c"
+                ;
+                justify-content: space-between;
+                border: 2px solid black;
+
+           }
+           .cell{
+             display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: center;
+                border: 2px solid black;
+
+           }
             #header{
-                grid-area: hd;
+                grid-area: t;
 
             }
             #sidebar{
-                grid-area: sb;
-
+                grid-area: c;
             }
-            #content{
-                grid-area: ct;
+            input {
+ width: 100%;
+    height: auto;
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
 
-            }
-            #footer{
-                grid-area: ft;
+input:focus {
+    outline: none;
+    border-color: #4b6cb7;
+    box-shadow: 0 0 0 3px rgba(75, 108, 183, 0.2);
+}
 
-            }
