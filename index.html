@@ -1,79 +1,47 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>CoolBlogs</title>
-        <style>
-            body{
-                display: flex;
-                flex-direction: column;
-                background-color:bisque;
-                justify-content: center;
-                
-            }
-            h1{
-                text-align: center;
-                
-            
-            }
-            p{
-                align-self: center;
-                text-align: center;
-                width: 900px;
-            }
-            .container{
-                display: grid;
-                height: 800px;
-                width: 500px;
-                gap: 0px;
-                grid-template-columns : 20% 80%;
-                grid-template-rows: 100px 600px 100px;
-                grid-template-areas:
-                "hd hd"
-                "sb ct"
-                "ft ft";
-                align-self: center;
-                border: 2px solid black;
-            
+        <title>Blogs</title>
+        <link rel="stylesheet" href="index.css">
 
-            }
-            .flexbox{
-                display:flex;
-                align-items:flex-start;
-                justify-content: center;
-                border:2px solid black;
-            }
-            #header{
-                grid-area: hd;
-
-            }
-            #sidebar{
-                grid-area: sb;
-
-            }
-            #content{
-                grid-area: ct;
-
-            }
-            #footer{
-                grid-area: ft;
-
-            }
-
-        </style>
+      
         
     </head>
     <body>
-        <h1>CoolBlogs</h1>
-        <p>Welcome to CoolBlogs, a website in which you can enjoy, write, and upload blogs to your hearts content!
-            We have blogs on all sorts of topics, but if thats not enough for you, you can create your own categories
-            of blogs. Creativity is awesome, which is why we encourage you to venture out speak your truth!
-        </p>
-        <div class = "container">
-            <div class = "flexbox" id = "header">Blog Categories</div>
-            <div class = "flexbox" id = "sidebar">Sidebar</div>
-            <div class = "flexbox" id = "content">Content</div>
-            <div class = "flexbox" id = "footer"></div>
+
+        <div class = "container" id = "cont1">
+            <h1>Blogs</h1>
+        </div>
+        <p style = "text-align: center">Welcome to Blogs! This is a webpage where you're free to write blogs on the subject of your choosing! Have fun!</p>
+
+        <div>
+        
         </div>
 
+
+        <div class = "container">
+            <div id = "one">
+                 <div class = "row">
+                     <div class = "cell" id = "t"> Topic</div>
+                     <div class = "cell" id = "c"> Blog</div>
+                </div>
+            <div class = "row">
+                <div class = "cell" id = "t">
+                     <input class = "BlogTitle" type = "text" placeholder = "Blog Name"> <br>
+                </div>
+                <div class = "cell" id = "c"> 
+                    <input class = "BlogContent" type = "text" placeholder = "Blog"> <br>
+                </div>
+            </div>
+         </div>
+        
+        <input type = "button" onclick = "AddRow()" value = "Add"> <br>
+        <input type = "button" onclick = "DeleteRow()" value = "Delete"> <br>
+         <input type = "button" onclick = "SaveInfo()" value = "Save"> <br>
+        </div>
+
+
+        <script src="script.js"></script>
+        
     </body>
 </html>
