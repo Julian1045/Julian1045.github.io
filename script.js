@@ -1,9 +1,9 @@
 
- // acessing table element
+    // acessing table element
 let tabble = document.getElementById('one');
 
 // creating array of tr elements
-let numRows = document.getElementsByTagName('tr');  
+let numRows = document.getElementsByClassName('row');  
 
 // gathering titles and contents - use proper arrays
 let input_array1 = [];
@@ -19,13 +19,24 @@ function AddRow(title = '', content = '', shouldSave = true){
     // creating array
     let arr = [1,2,3];
     // generating row element
-    let tableRow = document.createElement('tr');
+    let tableRow = document.createElement('div');
+    tableRow.setAttribute('class', "row");
+    
     //generating column elements and putting into array
     for(let i = 0; i<2; i++){
-        arr[i+1] = document.createElement('td');
+        arr[i+1] = document.createElement('div');
     }
     // putting row element into first slot of array
     arr[0] = tableRow;
+
+    arr[1].setAttribute('class', 'cell');
+    arr[1].setAttribute('id', 't');
+
+    //setting class and id types of  columns
+    arr[2].setAttribute('class', 'cell');
+    arr[2].setAttribute('id', 'c');
+
+    
     // appending rows and columns into their proper spaces
     tabble.appendChild(tableRow);
     tableRow.appendChild(arr[1]);
@@ -55,7 +66,7 @@ function AddRow(title = '', content = '', shouldSave = true){
     arr[2].appendChild(textBox2);
 
     // Update numRows reference
-    numRows = document.getElementsByTagName('tr');
+    numRows = document.getElementsByClassName('row');
 
     // Only save if this is a new row, not when loading
     if (shouldSave) {  //  Only save when shouldSave is true
@@ -65,7 +76,7 @@ function AddRow(title = '', content = '', shouldSave = true){
 
 function DeleteRow(){
     // Update numRows reference
-    numRows = document.getElementsByTagName('tr');
+    numRows = document.getElementsByClassName('row');
 
     if(numRows.length <= 1){ // Keep at least one row
         return;
@@ -133,7 +144,7 @@ async function loadSavedData() {
 // Function to clear existing rows (except the first one if it's a header)
 function clearExistingRows() {
      // Get all current rows
-    const rows = Array.from(tabble.querySelectorAll('tr'));
+    const rows = Array.from(tabble.querySelectorAll('.row'));
     
     // If we have more than 1 row, remove all except the first
     if (rows.length > 1) {
@@ -150,10 +161,15 @@ function clearExistingRows() {
     input_array2 = [];
     
     // Update numRows reference
-    numRows = document.getElementsByTagName('tr');
+    numRows = document.getElementsByClassName('row');
 }
 
 // Add at the bottom of script.js
 document.addEventListener('DOMContentLoaded', function() {
     loadSavedData();
 });
+
+
+
+
+           
